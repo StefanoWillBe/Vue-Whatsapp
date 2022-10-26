@@ -1,8 +1,8 @@
-let app = new Vue(
+var app = new Vue(
     {
-    el: "app",
+    el: "#app",
     data: {
-        contact: [
+        contacts: [
             {
                 name: 'Michele',
                 avatar: '_1',
@@ -87,5 +87,5 @@ let app = new Vue(
                 ],
             },
         ]
-    }, methods: {}
+        }, methods: {}
     });

@@ -5,149 +5,62 @@
     box-sizing: border-box;
 }
 
-/*WRAPPER*/
-.wrapper {
-   height: 100vh;
-    background: rgb(0, 149, 136);
-    padding: 50px 0;
-}
-#app {
-    max-width: 80%;
-    margin: auto;
+/*APP WRAPPER*/
+.app-wrapper {
+    /* DA VERIFICARE MIN WIDHT*/
+    min-width: 1100px;
+    width: 100%;
+    height: 100vh;
+    background-color: #dcdbd2;
     display: flex;
-    height: calc(100vh - 100px);
-}
-.column-contact {
-    width: 30%;
-    min-width: 273px;
-    overflow-y: hidden;
-    height: 100%;
-    min-height: 200px;
-    background-color: white;
+    justify-content: center;
+    align-items: center;
 }
 
-.column-chat {
-    width: 70%;
-    height: 100%;
-}
-.container-user {
-    padding: 10px;
-    background-color: #eaeaea;
+/*APP CONTAINER*/
+.app-container {
+    width: 80%;
+    height: 92%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+
+    /*    test*/
+    background-color: aqua;
 }
-.image {
+
+/*COMMON PARAMETER*/
+.header-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #eaeaea;
+}
+
+.header-contact-info img {
     width: 50px;
     height: 50px;
-    min-height: 30px;
-    min-width: 30px;
     border-radius: 50%;
-    overflow: hidden;
+    vertical-align: middle;
+
 }
-.image-name {
-    display: flex;
-    align-items: center;
-    position: relative;
+
+.header-contact-icons i {
+    font-size: 16px;
+    color: lightslategray;
+    margin: 0 10px;
 }
-.image-name .image img {
-    object-fit: cover;
-    width: 100%;
-    height: 105%;
-}
-.icon-container {
-    float: right;
-    display: flex;
-    justify-content: space-around;
-}
-.icon-container i {
-    padding-left: 20px;
-    font-size: 20px;
-    color: rgba(128, 128, 128, 0.5);
-    cursor: pointer;
-}
-.fa .fas {
-    font-weight: 900;
-}
-.notification-container {
-    background-color: #8edafb;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    line-height: 15px;
-}
-.icon-notification {
-    font-size: 20px;
-    background-color: white;
-    border-radius: 50%;
-    overflow: hidden;
-    color: #8edafb;
-    padding: 10px;
-}
-.notification-text {
-    padding-left: 10px;
-}
-.name-user {
-    font-size: 17px;
-    padding-left: 10px;
-}
-.filter {
-    background-color: rgba(234, 234, 234, 0.4);
-    padding: 5px;
-}
-.filter-container {
-    background-color: white;
-    display: flex;
-    padding: 5px 10px;
-    border: 1px solid #aeaeae;
-}
-.icon-search {
-    color: #c6c4c4;
-}
-.input-search {
-    padding-left: 20px;
-}
-.contact-list-container {
-    height: calc(100% - 200px);
-    overflow: hidden;
-}
-.contact-list {
+
+/*LEFT SECTION*/
+.left-section {
+    width: 35%;
     height: 100%;
-    overflow-y: auto;
+    background-color: wheat;
 }
-.contact-list .image-name .active {
-    background-color: #eaeaea;
-}
-.contact-list .image-name {
-    border-bottom: 1px solid #eaeaea;
-    padding: 5px 10px;
-}
-.contact-list .image-name .last-activities {
-    top: 0;
-    right: 0;
-    padding-right: 10px;
-    padding-top: 10px;
-}
-.last-activities {
-    position: absolute;
-    font-size: 10px;
-    color: rgb(128, 128, 128);
-}
-.column-chat .container-user, .send-message {
-    border-left: 2px solid rgba(128, 128, 128, 0.6);
-}
-.container-chat {
-    height: calc(100% - 118px);
-    background-image: url(../img/background.png);
-    background-color: #e5ddd5;
-    padding: 0 20px;
-    overflow: auto;
-    position: relative;
-}
-.send-message {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f3eeea;
-    padding: 10px 0;
+
+/*RIGHT SECTION*/
+.right-section {
+    width: 65%;
+    height: 100%;
+    background-color: rosybrown;
 }
