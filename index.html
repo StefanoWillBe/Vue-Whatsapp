@@ -75,15 +75,17 @@
                 <div class="contacts-list">
 
                     <!--  Single Contacts  -->
-                    <div v-for="(contact) in contacts" class="contact active">
-                        <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                    <div v-for="(contact, index) in contacts"
+                         class="contact" :class="{'active' : index == activeContact }"
+                         @click="setActiveContact(index)">
+                        <img :src="'img/avatar' + contact.avatar + '.jpg'"
+                             :alt="contacts[activeContact].name">
                         <span>{{contact.name}}</span>
                     </div>
-                    <!--  Single Contacts  -->
+                    <!--  End Single Contacts  -->
 
                 </div>
                 <!--  End Contacts Lists-->
-
 
             </div>
             <!--       END LEFT SECTION-->
@@ -91,12 +93,13 @@
             <!--        RIGHT SECTION-->
             <div class="right-section">
 
-                <!-- HEADER CONTACT RIGHT-->
+                <!-- Header Contact Right-->
 
                 <div class="header-contact">
                     <div class="header-contact-info">
-                        <img src="img/avatar_1.jpg" alt="Michele Piscirotto">
-                        <span>Michele Piscirotto</span>
+                        <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'"
+                             :alt="contacts[activeContact].name">
+                        <span>{{contacts[activeContact].name}}</span>
                         <div>
                         </div>
                     </div>
@@ -109,29 +112,56 @@
                     <!-- End Contact Icon -->
 
                 </div>
-                <!-- END HEADER CONTACT RIGHT-->
+                <!-- End Header Contact Right-->
 
-                <!-- Contact Message -->
-                <div class="message">
+                <!-- Message -->
+                <div class="messages">
+
+                    <!-- Single Message -->
+                    <div v-for="message in contacts[activeContact].messages"
+                         class="message" :class="message.status">
+                        <span class="text"> {{ message.text}}</span>
+                        <div class="time">
+                            <p>{{ message.date}}</p>
+                        </div>
+                    </div>
+                    <!--  End Single Message-->
 
                 </div>
-                <!-- End Contact Message-->
+                <!-- End Message-->
 
                 <!-- Footer Message -->
                 <div class="message-footer">
 
+                    <!-- Smile Icon-->
+                    <div class="smile">
+                        <i class="fa fa-smile"></i>
+                    </div>
+                    <!-- End Smile Icon-->
+
+                    <!-- Send Message Input-->
+                    <div class="send-message-input">
+                        <input id="input" type="text" placeholder=" Scrivi un messaggio...">
+                    </div>
+                    <!-- End Message Input-->
+
+                    <!-- Microphone Icon-->
+                    <div class="microphone">
+                        <i class="fa fa-microphone"></i>
+                    </div>
+                    <!-- End Microphone Icon-->
                 </div>
                 <!-- End Footer Message-->
 
-
-
             </div>
             <!--        END RIGHT SECTION-->
+
         </div>
         <!-- END APP CONTAINER-->
 
     </div>
     <!--    WRAPPER DELLA PAGINA-->
+
 </div>
 
 

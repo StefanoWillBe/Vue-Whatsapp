@@ -129,8 +129,8 @@
     background-color: #eaeaea;
     cursor: pointer;
 }
-.contact .active {
-    background-color: lightslategray;
+.contact.active {
+    background-color: #c6d6e7;
 }
 
 /*RIGHT SECTION*/
@@ -142,16 +142,57 @@
     flex-direction: column;
     overflow: hidden;
 }
-.message {
+.messages {
     background-image: url("/img/mine.jpg");
     overflow-y: auto;
     flex-grow: 1;
-
+    padding: 30px;
+}
+.message {
+    max-width: 600px;
+    min-width: 250px;
+    margin-bottom: 20px;
+    padding: 13px;
+    border-radius: 12px;
+    clear: both;
+    position: relative;
+}
+.message.send {
+    padding: 18px 0 18px 17px;
+    background-color: #a2ebac;
+    float: right;
+}
+.message.received {
+    background-color: white;
+    float: left;
+}
+.time p {
+    position: absolute;
+    bottom: 2px;
+    right: 15px;
+    color: rgb(34, 12, 64, 0.6);
+    font-size: 10px;
 }
 .message-footer {
-    height: 45px;
+    height: 55px;
     background-color: #eaeaea;
+    display: flex;
+    padding: 14px;
+    text-align: center;
 
-
-
+}
+.smile,
+.microphone {
+    font-size: 23px;
+    color: lightslategray;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.message-footer .send-message-input {
+    flex-grow: 1;
+}
+.message-footer .send-message-input input {
+    width: 100%;
+    height: 16px;
+    padding: 10px;
 }
