@@ -32,22 +32,58 @@
             <!--        LEFT SECTION-->
             <div class="left-section">
 
-                <!-- HEADER CONTACT LEFT-->
+                <!-- Header Contact Left-->
                 <div class="header-contact">
-                <div class="header-contact-info">
-                    <img src="img/avatar_io.jpg" alt="Stefano Russo">
-                    <span>Stefano Russo</span>
-                </div>
+                    <div class="header-contact-info">
+                        <img src="img/avatar_7.jpg" alt="Stefano Russo">
+                        <span>Stefano Russo</span>
+                    </div>
+
+                    <!-- Section Contact Icon -->
                     <div class="header-contact-icons">
                         <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
+                    <!-- End Section Contact Icon -->
 
                 </div>
+                <!-- end Header Contact Left-->
 
+                <!--  Notification -->
+                <div class="notifications">
+                    <div class="icon-bell">
+                        <i class="fas fa-bell-slash" aria-hidden="true"></i>
+                    </div>
+                    <div class="notifications-content">
+                        <div>Ricevere notifiche di nuovi messaggi</div>
+                        <div><a href="#">Attiva notifiche Desktop</a></div>
+                    </div>
+                </div>
+                <!--  End Notification -->
 
-                <!-- END HEADER CONTACT LEFT-->
+                <!--  Search Contact-->
+                <div class="contacts-filter">
+                    <label for="cont-filter">
+                        <i aria-hidden="true" class="fa fa-search"></i>
+                    </label>
+                    <input id="cont-filter" type="text" placeholder=" Cerca o inizia una nuova chat...">
+                </div>
+                <!--  End search Contact-->
+
+                <!--  Contacts Lists-->
+                <div class="contacts-list">
+
+                    <!--  Single Contacts  -->
+                    <div v-for="(contact) in contacts" class="contact active">
+                        <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                        <span>{{contact.name}}</span>
+                    </div>
+                    <!--  Single Contacts  -->
+
+                </div>
+                <!--  End Contacts Lists-->
+
 
             </div>
             <!--       END LEFT SECTION-->
@@ -61,15 +97,33 @@
                     <div class="header-contact-info">
                         <img src="img/avatar_1.jpg" alt="Michele Piscirotto">
                         <span>Michele Piscirotto</span>
+                        <div>
+                        </div>
                     </div>
+                    <!-- Contact Icon -->
                     <div class="header-contact-icons">
                         <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
+                    <!-- End Contact Icon -->
 
                 </div>
-                    <!-- END HEADER CONTACT RIGHT-->
+                <!-- END HEADER CONTACT RIGHT-->
+
+                <!-- Contact Message -->
+                <div class="message">
+
+                </div>
+                <!-- End Contact Message-->
+
+                <!-- Footer Message -->
+                <div class="message-footer">
+
+                </div>
+                <!-- End Footer Message-->
+
+
 
             </div>
             <!--        END RIGHT SECTION-->

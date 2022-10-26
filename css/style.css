@@ -8,7 +8,7 @@
 /*APP WRAPPER*/
 .app-wrapper {
     /* DA VERIFICARE MIN WIDHT*/
-    min-width: 1100px;
+    min-width: 894px;
     width: 100%;
     height: 100vh;
     background-color: #dcdbd2;
@@ -22,40 +22,115 @@
     width: 80%;
     height: 92%;
     display: flex;
-
-
-    /*    test*/
-    background-color: aqua;
 }
 
-/*COMMON PARAMETER*/
-.header-contact {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px;
-    background-color: #eaeaea;
-}
-
-.header-contact-info img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    vertical-align: middle;
-
-}
-
-.header-contact-icons i {
-    font-size: 16px;
-    color: lightslategray;
-    margin: 0 10px;
-}
 
 /*LEFT SECTION*/
 .left-section {
     width: 35%;
     height: 100%;
-    background-color: wheat;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: white;
+}
+.header-contact {
+    display: flex;
+    min-width: 270px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #eaeaea;
+}
+.header-contact-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.header-contact-icons i {
+    font-size: 16px;
+    color: lightslategray;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.notifications {
+    display: flex;
+    height: 67px;
+    padding: 8px;
+    background-color: #8edafc;
+}
+.notifications .icon-bell  {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;
+}
+.icon-bell i {
+    font-size: 20px;
+    color: #8edafc;
+    line-height: 50px;
+}
+.notifications-content {
+    margin-left: 10px;
+    font-size: 11px;
+    padding: 12px 5px;
+}
+.contacts-filter {
+    padding: 8px 8px 8px 5px;
+    background-color: #eaeaea;
+    display: flex;
+
+}
+.contacts-filter i {
+    font-size: 20px;
+    color: lightslategray;
+    background-color: white;
+    cursor: pointer;
+    border-right: 0;
+}
+.contacts-filter label {
+    padding: 3px;
+    background-color:  white;
+    border: 1px solid lightslategray;
+    border-right: 0;
+    width: 35px;
+}
+.contacts-filter input {
+    width: 100%;
+    border: 1px solid lightslategray;
+    border-left: 0;
+}
+.contacts-list {
+    background-color: white;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+.single-contact img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    vertical-align: middle;
+    padding: 8px;
+}
+
+.contact {
+    border-bottom: 1px solid #f1f1f1;
+}
+.contacts-list img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+    padding: 8px;
+}
+.contact:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+}
+.contact .active {
+    background-color: lightslategray;
 }
 
 /*RIGHT SECTION*/
@@ -63,4 +138,20 @@
     width: 65%;
     height: 100%;
     background-color: rosybrown;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.message {
+    background-image: url("/img/mine.jpg");
+    overflow-y: auto;
+    flex-grow: 1;
+
+}
+.message-footer {
+    height: 45px;
+    background-color: #eaeaea;
+
+
+
 }
