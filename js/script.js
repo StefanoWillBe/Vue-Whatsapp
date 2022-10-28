@@ -161,6 +161,17 @@ var app = new Vue(
                 getActivemessageDate(index) {
                     const ultimateMess = this.contacts[index].messages;
                     return ultimateMess[ultimateMess.length - 1].date;
+                },
+                // get ultimate text message
+                getTextMessage(contactIndex){
+                 const contactMessages = this.contacts[contactIndex].messages;
+                 const contactLastMessage= contactMessages[contactMessages.length - 1].text;
+
+                 let textToPrint= contactLastMessage.slice(0 ,30);
+                    if(textToPrint.length >= 30){
+                        textToPrint += "..."
+                    }
+                 return textToPrint;
                 }
 
             }

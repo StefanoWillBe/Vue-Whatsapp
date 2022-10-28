@@ -82,13 +82,14 @@
                          v-if="contact.visible"
                          class="contact" :class="{'active' : index == activeContact }"
                          @click="setActiveContact(index)">
-
                         <img :src="'img/avatar' + contact.avatar + '.jpg'"
                              :alt="contacts[index].name">
                         <span>{{contact.name }}</span>
                         <div v-if="contacts[index].messages.length > 0"
                              class="ultimateAccess">
-                            ultimo accesso {{ getActivemessageDate(index) }} </div>
+                            ultimo accesso {{ getActivemessageDate(index) }}
+                        </div>
+                        <div class="ultimateMessageListContact">{{ getTextMessage(index) }}</div>
                     </div>
                     <!--  End Single Contacts  -->
 
@@ -108,7 +109,9 @@
                         <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'"
                              :alt="contacts[activeContact].name">
                         <span>{{contacts[activeContact].name}}</span>
-                        <div class="ultimateAccess">ultimo accesso {{ getActivemessageDate(activeContact) }}</div>
+                        <div class="ultimateAccess">ultimo accesso
+                            {{ getActivemessageDate(activeContact) }}
+                        </div>
                         <div>
                         </div>
                     </div>
@@ -160,9 +163,9 @@
                     <!-- Send Message Input-->
                     <div class="send-message-input">
                         <input id="input"
-                        type="text" placeholder="
+                               type="text" placeholder="
                         Scrivi un messaggio..." v-model="newMessage"
-                        @keyup.enter="sendNewMessage()">
+                               @keyup.enter="sendNewMessage()">
                     </div>
                     <!-- End Message Input-->
 
