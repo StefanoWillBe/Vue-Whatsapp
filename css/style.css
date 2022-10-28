@@ -48,6 +48,19 @@
     border-radius: 50%;
     vertical-align: middle;
 }
+.header-contact-info {
+    position: relative;
+
+}
+.header-contact-info .ultimateAccess {
+    position: absolute;
+    width: max-content;
+    top: 43px;
+    left: 47px;
+    color: #685d5d;
+    font-size: 11px;
+
+}
 .header-contact-icons i {
     font-size: 16px;
     color: lightslategray;
@@ -117,6 +130,7 @@
 
 .contact {
     border-bottom: 1px solid #f1f1f1;
+    position: relative;
 }
 .contacts-list img {
     width: 50px;
@@ -131,6 +145,13 @@
 }
 .contact.active {
     background-color: #c6d6e7;
+}
+.contact .ultimateAccess {
+    position: absolute;
+    font-size: 8px;
+    top: 35px;
+    right: 11px;
+    padding: 2px 0 2px 0;
 }
 
 /*RIGHT SECTION*/
@@ -157,8 +178,35 @@
     clear: both;
     position: relative;
 }
+.chevron {
+    display: none;
+    position: absolute;
+    top: 2px;
+    right: 15px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.message:hover .chevron {
+    display: block;
+    color: #c5c49c;
+}
+.message .option-list {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background-color: #f1f1f1;
+    color: #aba3a3;
+    border: 1px solid lightgray;
+    z-index: 1;
+}
+.message .option-list ul {
+    list-style: none;
+}
+.message .option-list li {
+    padding: 10px;
+}
 .message.send {
-    padding: 18px 0 18px 17px;
+    padding: 18px 8px 18px 17px;
     background-color: #a2ebac;
     float: right;
 }

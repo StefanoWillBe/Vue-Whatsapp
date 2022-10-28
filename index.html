@@ -36,7 +36,6 @@
                 <div class="header-contact">
                     <div class="header-contact-info">
                         <img src="img/avatar_7.jpg" alt="Stefano Russo">
-                        <span>Stefano Russo</span>
                     </div>
 
                     <!-- Section Contact Icon -->
@@ -67,7 +66,11 @@
                     <label for="cont-filter">
                         <i aria-hidden="true" class="fa fa-search"></i>
                     </label>
-                    <input id="cont-filter" type="text" placeholder=" Cerca o inizia una nuova chat...">
+                    <input
+                            id="cont-filter" type="text"
+                            placeholder=" Cerca o inizia una nuova chat..."
+                            v-model="searchContact" @keyup="filterContact"
+                    >
                 </div>
                 <!--  End search Contact-->
 
@@ -76,11 +79,16 @@
 
                     <!--  Single Contacts  -->
                     <div v-for="(contact, index) in contacts"
+                         v-if="contact.visible"
                          class="contact" :class="{'active' : index == activeContact }"
                          @click="setActiveContact(index)">
+
                         <img :src="'img/avatar' + contact.avatar + '.jpg'"
-                             :alt="contacts[activeContact].name">
-                        <span>{{contact.name}}</span>
+                             :alt="contacts[index].name">
+                        <span>{{contact.name }}</span>
+                        <div v-if="contacts[index].messages.length > 0"
+                             class="ultimateAccess">
+                            ultimo accesso {{ getActivemessageDate(index) }} </div>
                     </div>
                     <!--  End Single Contacts  -->
 
@@ -100,6 +108,7 @@
                         <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'"
                              :alt="contacts[activeContact].name">
                         <span>{{contacts[activeContact].name}}</span>
+                        <div class="ultimateAccess">ultimo accesso {{ getActivemessageDate(activeContact) }}</div>
                         <div>
                         </div>
                     </div>
@@ -118,11 +127,20 @@
                 <div class="messages">
 
                     <!-- Single Message -->
-                    <div v-for="message in contacts[activeContact].messages"
+                    <div v-for="(message, index) in contacts[activeContact].messages"
                          class="message" :class="message.status">
-                        <span class="text"> {{ message.text}}</span>
+                        <div class="chevron" @click="toggolDropDown(index)">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                        <div v-if="index === activeMenu" class="option-list">
+                            <ul>
+                                <li>Message Info</li>
+                                <li @click="deleteMessage(index)">Delete Message</li>
+                            </ul>
+                        </div>
+                        <span class="text"> {{ message.text }}</span>
                         <div class="time">
-                            <p>{{ message.date}}</p>
+                            <p>{{ message.date }}</p>
                         </div>
                     </div>
                     <!--  End Single Message-->
@@ -141,7 +159,10 @@
 
                     <!-- Send Message Input-->
                     <div class="send-message-input">
-                        <input id="input" type="text" placeholder=" Scrivi un messaggio...">
+                        <input id="input"
+                        type="text" placeholder="
+                        Scrivi un messaggio..." v-model="newMessage"
+                        @keyup.enter="sendNewMessage()">
                     </div>
                     <!-- End Message Input-->
 
