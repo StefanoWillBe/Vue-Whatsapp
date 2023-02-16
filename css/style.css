@@ -5,17 +5,18 @@
     box-sizing: border-box;
 }
 
+
+
 /*APP WRAPPER*/
 .app-wrapper {
-    /* DA VERIFICARE MIN WIDHT*/
-    min-width: 894px;
     width: 100%;
     height: 100vh;
-    background-color: #dcdbd2;
+    background-image: linear-gradient(to bottom, #04420c, #074b14, #09541c, #0b5d24, #0d672c, #1c7641, #2a8556, #38946b, #59ac90, #7dc3b3, #a5dbd3, #cff2f0);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 /*APP CONTAINER*/
 .app-container {
@@ -36,11 +37,12 @@
 }
 .header-contact {
     display: flex;
-    min-width: 270px;
+    min-width: 260px;
     align-items: center;
     justify-content: space-between;
+    border-left: 1px solid rgb(225 222 222);
     padding: 8px;
-    background-color: #eaeaea;
+    background-color: #f0f2f5;
 }
 .header-contact-info img {
     width: 50px;
@@ -98,7 +100,7 @@
 }
 .contacts-filter i {
     font-size: 20px;
-    color: lightslategray;
+    color: #54656f;
     background-color: white;
     cursor: pointer;
     border-right: 0;
@@ -230,9 +232,10 @@
 }
 .message-footer {
     height: 55px;
-    background-color: #eaeaea;
+    background-color: #f0f2f5;
     display: flex;
-    padding: 14px;
+    padding: 10px;
+    justify-content: center;
     text-align: center;
 
 }
@@ -240,14 +243,16 @@
 .microphone {
     font-size: 23px;
     color: lightslategray;
-    margin: 0 10px;
+    margin: 5px 10px;
     cursor: pointer;
 }
 .message-footer .send-message-input {
     flex-grow: 1;
 }
 .message-footer .send-message-input input {
+    border: 0;
+    border-radius: 5px;
     width: 100%;
-    height: 16px;
-    padding: 10px;
+    height: 35px;
+
 }

@@ -5,24 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>ToDo List</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
             rel="stylesheet"
     />
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     <!--    Vue 2-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="css/style.css"/>
     <title>WhatsApp Web</title>
 </head>
 <body>
-
+    
 <div id="app">
-
+    
     <!--    WRAPPER DELLA PAGINA-->
     <div class="app-wrapper">
 
@@ -40,9 +37,11 @@
 
                     <!-- Section Contact Icon -->
                     <div class="header-contact-icons">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt"></i>
+                        <i class="fa-solid fa-users"></i>
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
                         <i class="fas fa-ellipsis-v"></i>
+                        
                     </div>
                     <!-- End Section Contact Icon -->
 
@@ -79,14 +78,14 @@
 
                     <!--  Single Contacts  -->
                     <div v-for="(contact, index) in contacts"
-                         v-if="contact.visible"
-                         class="contact" :class="{'active' : index == activeContact }"
-                         @click="setActiveContact(index)">
+                        v-if="contact.visible"
+                        class="contact" :class="{'active' : index == activeContact }"
+                        @click="setActiveContact(index)">
                         <img :src="'img/avatar' + contact.avatar + '.jpg'"
-                             :alt="contacts[index].name">
+                            :alt="contacts[index].name">
                         <span>{{contact.name }}</span>
                         <div v-if="contacts[index].messages.length > 0"
-                             class="ultimateAccess">
+                            class="ultimateAccess">
                             ultimo accesso {{ getActivemessageDate(index) }}
                         </div>
                         <div class="ultimateMessageListContact">{{ getTextMessage(index) }}</div>
@@ -107,7 +106,7 @@
                 <div class="header-contact">
                     <div class="header-contact-info">
                         <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'"
-                             :alt="contacts[activeContact].name">
+                            :alt="contacts[activeContact].name">
                         <span>{{contacts[activeContact].name}}</span>
                         <div class="ultimateAccess">ultimo accesso
                             {{ getActivemessageDate(activeContact) }}
@@ -116,9 +115,8 @@
                         </div>
                     </div>
                     <!-- Contact Icon -->
-                    <div class="header-contact-icons">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt"></i>
+                    <div class="header-contact-icons">                        
+                        <i class="fa-solid fa-magnifying-glass"></i>
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                     <!-- End Contact Icon -->
@@ -131,7 +129,7 @@
 
                     <!-- Single Message -->
                     <div v-for="(message, index) in contacts[activeContact].messages"
-                         class="message" :class="message.status">
+                        class="message" :class="message.status">
                         <div class="chevron" @click="toggolDropDown(index)">
                             <i class="fa fa-chevron-down"></i>
                         </div>
@@ -156,16 +154,16 @@
 
                     <!-- Smile Icon-->
                     <div class="smile">
-                        <i class="fa fa-smile"></i>
+                        <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <!-- End Smile Icon-->
 
                     <!-- Send Message Input-->
                     <div class="send-message-input">
                         <input id="input"
-                               type="text" placeholder="
+                            type="text" placeholder="
                         Scrivi un messaggio..." v-model="newMessage"
-                               @keyup.enter="sendNewMessage()">
+                            @keyup.enter="sendNewMessage()">
                     </div>
                     <!-- End Message Input-->
 

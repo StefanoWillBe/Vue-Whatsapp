@@ -104,10 +104,11 @@ var app = new Vue(
                 sendNewMessage() {
                     const newMessageObj = {
                         date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                        text: this.newMessage,
-                        status: 'send'
+                        text: this.newMessage,                        
+                        status: 'send'                        
                     };
-
+    
+                    
                     this.contacts[this.activeContact].messages.push(newMessageObj);
 
                     this.newMessage = "";
@@ -116,12 +117,12 @@ var app = new Vue(
 
                     setTimeout(() => {
 
-                        const newRepalyObj = {
+                        const newReplayObj = {
                             date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                             text: " Hola, da quanto tempo ...",
                             status: 'received'
                         };
-                        this.contacts[sentMessageActiveContact].messages.push(newRepalyObj);
+                        this.contacts[sentMessageActiveContact].messages.push(newReplayObj);
                     }, 1000);
 
                 },
@@ -164,14 +165,14 @@ var app = new Vue(
                 },
                 // get ultimate text message
                 getTextMessage(contactIndex){
-                 const contactMessages = this.contacts[contactIndex].messages;
-                 const contactLastMessage= contactMessages[contactMessages.length - 1].text;
+                    const contactMessages = this.contacts[contactIndex].messages;
+                    const contactLastMessage= contactMessages[contactMessages.length - 1].text;
 
-                 let textToPrint= contactLastMessage.slice(0 ,30);
+                    let textToPrint= contactLastMessage.slice(0 ,30);
                     if(textToPrint.length >= 30){
                         textToPrint += "..."
                     }
-                 return textToPrint;
+                    return textToPrint;
                 }
 
             }
